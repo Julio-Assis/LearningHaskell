@@ -1,7 +1,9 @@
 module MatrixBasics(
   getDimension,
   transpose,
-  dotProduct
+  dotProduct,
+  identity,
+  zeros
 ) where
 
 import TypeDefinitions (Matrix, Dimension)
@@ -24,3 +26,9 @@ transpose matrixA =
 
 dotProduct :: (Num a) => [a] -> [a] -> a
 dotProduct = (\vectorA vectorB -> sum $ zipWith (*) vectorA vectorB)
+
+identity :: (Num a) => Int -> Matrix a
+identity size = [[if row == col then 1 else 0 | col <- [1..size]] | row <- [1..size]]
+
+zeros :: (Num a) => Int -> Matrix a
+zeros size = [[0 | col <- [1..size]] | row <- [1..size]]
