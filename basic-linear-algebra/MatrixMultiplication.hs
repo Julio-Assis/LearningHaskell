@@ -1,3 +1,7 @@
+module MatrixMultiplication (
+  matrixMultiplication
+) where
+
 import Data.List.Split (chunksOf)
 import MatrixBasics (getDimension, transpose, dotProduct)
 import TypeDefinitions (Matrix, Dimension)
